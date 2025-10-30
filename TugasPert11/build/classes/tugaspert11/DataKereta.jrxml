@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DataKereta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="baf5f8d8-60b6-411f-949f-87c96b46d004">
+	<parameter name="tanggalLaporan" class="java.util.Date"/>
+    <queryString language="SQL">
+		<![CDATA[SELECT * FROM depokeretasbi;]]>
+	</queryString>
+	<field name="id_armada" class="java.lang.Integer"/>
+	<field name="nomor_armada" class="java.lang.String"/>
+	<field name="jenis_armada" class="java.lang.String"/>
+	<field name="tanggal_mulai_dinas" class="java.sql.Date"/>
+	<field name="tanggal_perawatan_terakhir" class="java.sql.Date"/>
+	<field name="tanggal_perawatan_berikutnya" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="101" height="100" uuid="08dc2ec3-7dd9-48bf-a749-045617467cc0"/>
+				<imageExpression><![CDATA["C:\\Users\\RAISSA\\Documents\\NetBeansProjects\\TugasPert11\\src\\tugaspert11\\Logo-Baru-PT-KAI.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="101" y="0" width="454" height="25" uuid="7ff694a7-30a2-4b75-89f9-2afdf9605262"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT. KERETA API INDONESIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="25" width="454" height="25" uuid="15687c42-61ab-48bc-a0fe-7f81464850ae"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAERAH OPERASI VIII SURABAYA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="50" width="454" height="25" uuid="2c9edf0e-680f-4cb4-8364-e503915f0c3e"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UPT DEPO KERETA SURABAYA PASARTURI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="75" width="454" height="25" uuid="9cfedd7c-63a9-4ce5-b632-a3cd6b2ee741"/>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="15" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jl. Bojonegoro No.1, Gundih, Kec. Bubutan, Surabaya, Jawa Timur 60172]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="78" height="20" uuid="7ce9cc41-016d-497a-943c-46a5d44ec8c4"/>
+				<textFieldExpression><![CDATA[$F{id_armada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="94" height="20" uuid="17740a05-02b5-4e32-b830-0627f46f6d8d"/>
+				<textFieldExpression><![CDATA[$F{nomor_armada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="0" width="87" height="20" uuid="31bbc98a-328b-496d-b918-1eef3cbaa557"/>
+				<textFieldExpression><![CDATA[$F{jenis_armada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="0" width="78" height="20" uuid="ca2575cc-54c0-4e94-834e-6861f7d3a88c"/>
+				<textFieldExpression><![CDATA[$F{tanggal_mulai_dinas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="91" height="20" uuid="5f72a43b-1f7e-459e-bc46-6d04285cea05"/>
+				<textFieldExpression><![CDATA[$F{tanggal_perawatan_terakhir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="0" width="124" height="20" uuid="04666008-3dee-4c79-b70c-492242363805"/>
+				<textFieldExpression><![CDATA[$F{tanggal_perawatan_berikutnya}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="405" y="14" width="50" height="20" uuid="63c71bbe-911c-4b3c-8fa1-3dcb23fb01ab"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Surabaya,]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="455" y="14" width="100" height="20" uuid="45aaa5f4-6922-4c39-8440-9e6630c61970"/>
+				<textFieldExpression><![CDATA[$P{tanggalLaporan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="133" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="491" y="0" width="64" height="20" uuid="6fd6c850-f667-4c12-a27e-50283f131538"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Mengetahui,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="57" width="181" height="20" uuid="ace94d64-7aa2-4c0f-90b4-a1c8a0a06d97"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ismanto Suhartono, S.STP., M.Si.]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
